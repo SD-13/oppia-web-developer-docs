@@ -1,0 +1,32 @@
+name: markdown-lint-check
+
+on:
+  push:
+
+jobs:
+  lint-check:
+    name: markdown-lint-checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Markdown lint check
+        run: |
+          find . -type f -name "*.md" -print | xargs -0 grep -l -P '^**Note**:' | while read -r line; do
+            if [[ $line =~ ^**Note**:\ [A-Z].* ]]; then
+              echo "Valid Note Format"
+            else
+              echo "Invalid Note Format"
+              exit 1
+            fi
+          done
+      - name: Check Warning Notation
+        run: |
+          find . -type f -print0 | xargs -0 grep -P '^**Warning**:' | while read -r line; do
+            if [[ $line =~ ^**Warning**:\ [A-Z].* ]]; then
+              echo "Valid Warning Format"
+            else
+              echo "Invalid Warning Format"
+              exit 1
+            fi
+          done
