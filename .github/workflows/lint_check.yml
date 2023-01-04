@@ -22,7 +22,7 @@ jobs:
           done
       - name: Check Warning Notation
         run: |
-          find . -type f -print0 | xargs -0 grep -P '^\*\*Warning\*\*.*' | while read -r line; do
+          find . -type f -print0 | xargs -0 grep -l -P '^\*\*Warning\*\*.*' | while read -r line; do
             if [[ $line =~ '^\*\*Warning\*\*$' ]]; then
               echo "Valid Warning Format"
             else
