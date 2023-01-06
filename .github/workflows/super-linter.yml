@@ -8,6 +8,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        path: .github/linters/markdownlint.json
     
     - name: Super-Linter
       uses: github/super-linter@v4.10.0
