@@ -15,5 +15,7 @@ jobs:
       uses: github/super-linter@v4.10.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LINTER_RULES_PATH: /.github/linters
         # VALIDATE_ALL_CODEBASE: false
         MARKDOWN_CONFIG_FILE: .github/linters/markdownlint.json
+        VALIDATE_MARKDOWN: true
