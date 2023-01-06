@@ -17,5 +17,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LINTER_RULES_PATH: /.github/linters
         # VALIDATE_ALL_CODEBASE: false
-        MARKDOWN_CONFIG_FILE: .github/linters/markdownlint.json
+        MARKDOWN_CONFIG_FILE: markdownlint.json
         VALIDATE_MARKDOWN: true
