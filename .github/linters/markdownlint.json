@@ -1,8 +1,0 @@
-{
-  "rules": {
-    "custom-rule-1": {
-      "regex": "^\\*\\*Note\\*\\*:",
-      "message": "Replace with '> **Note**' and keep rest in new line with '> '"
-    }
-  }
-}
