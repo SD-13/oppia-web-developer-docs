@@ -1,21 +1,8 @@
 {
-    "default": true,
-    "Check notations": {
-      "rules": [
-        {
-          "name": "Note notation",
-          "message": "Replace with '> **Note**' and keep rest in new line with '> '",
-          "searchPattern": "^\\*\\*Note\\*\\*:",
-          "flags": "m",
-          "replace": "^>\\s\\*\\*Note\\*\\*$"
-        },
-        {
-          "name": "Warning notation",
-          "message": "Replace with '> **Warning**' and keep rest in new line with '> '",
-          "searchPattern": "^\\*\\*Warning\\*\\*:",
-          "flags": "m",
-          "replace": "^>\\s\\*\\*Warning\\*\\*$"
-        }
-      ]
+  "rules": {
+    "custom-rule-1": {
+      "regex": "^\\*\\*Note\\*\\*:",
+      "message": "Replace with '> **Note**' and keep rest in new line with '> '"
     }
+  }
 }
