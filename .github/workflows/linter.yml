@@ -15,11 +15,9 @@ jobs:
         cat markdown_files.txt
     - name: Lint markdown files
       run: |
-        for file in $(cat markdown_files.txt); do
-          echo "Linting $file"
-          docker run --rm -v "$(pwd)/$file:/$file:ro" avtodev/markdown-lint:v1 --rules /linter/rules.js --config /linter/config.yml /$file
-        done    
-      # uses: docker://avtodev/markdown-lint:v1
+        while read -r file; do
+          docker run --rm -v "$(pwd)/$file:/$file:ro" avtodev/markdown-lint:v1 --rules linter/rules.js --config linter/config.yml /$file
+        done < markdown_files.txt      # uses: docker://avtodev/markdown-lint:v1
       # with:
       #   rules: 'linter/rules.js'
       #   config: 'linter/config.yml'
