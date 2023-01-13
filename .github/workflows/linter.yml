@@ -9,8 +9,12 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
+    - name: Find all .md files
+      run: |
+        find . -name "*.md" -type f -exec echo {} \; >> markdown_files.txt
+        cat markdown_files.txt
     - name: Lint markdown files
-      uses: avto-dev/markdown-lint@v1
+      uses: docker://avtodev/markdown-lint:v1
       with:
         rules: 'linter/rules.js'
         config: 'linter/config.yml'
