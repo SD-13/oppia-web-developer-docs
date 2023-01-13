@@ -18,4 +18,4 @@ jobs:
       with:
         rules: 'linter/rules.js'
         config: 'linter/config.yml'
-        args: '-f markdown_files.txt'
+        args: $(cat markdown_files.txt)
