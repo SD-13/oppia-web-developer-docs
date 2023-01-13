@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Find all .md files
       run: |
-        find . -name "*.md" -type f -exec echo {} " " \; >> markdown_files.txt
+        find . -name "*.md" -type f -exec echo {} " " \; > markdown_files.txt
         cat markdown_files.txt
     - name: Lint markdown files
       uses: docker://avtodev/markdown-lint:v1
