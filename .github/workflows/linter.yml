@@ -14,4 +14,3 @@ jobs:
       with:
         rules: 'linter/rules.js'
         config: 'linter/config.yml'
-        args: 'Angular-Migration.md'
