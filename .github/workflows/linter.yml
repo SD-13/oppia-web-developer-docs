@@ -19,6 +19,6 @@ jobs:
         docker run --rm \
           -v "$(pwd)/Angular-Migration.md:/Angular-Migration:ro" \
           avtodev/markdown-lint:v1 \
-          --rules .github/linter/rules.js \
-          --config .github/linter/config.yml \
+          --rules /linter/rules.js \
+          --config /linter/config.yml \
           /Angular-Migration.md
