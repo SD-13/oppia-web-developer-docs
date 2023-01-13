@@ -12,7 +12,7 @@ jobs:
     - name: Install Docker
       run: |
         sudo apt-get update
-        sudo apt-get -y install docker.io
+        sudo apt-get -y install docker
     - name: Lint Markdown files
       run: |
         docker run --rm \
