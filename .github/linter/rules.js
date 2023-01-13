@@ -16,7 +16,7 @@ module.exports = [{
     tags: ["notes", "markdown"],
     function: (params, onError) => {
         params.lines.forEach(function forLine(line, lineNumber) {
-            if(line.match(/^\*\*Note\*\*/)){
+            if(line.match(/^\*\*Note/)){
                 if(!params.lines[lineNumber-1].match(/^> \*\*Note\*\*$/)){
                     onError({
                         lineNumber: lineNumber+1,
@@ -33,7 +33,7 @@ module.exports = [{
     tags: ["warning", "markdown"],
     function: (params, onError) => {
         params.lines.forEach(function forLine(line, lineNumber) {
-            if(line.match(/^\*\*Warning\*\*/)){
+            if(line.match(/^\*\*Warning/)){
                 if(!params.lines[lineNumber-1].match(/^> \*\*Warning\*\*$/)){
                     onError({
                         lineNumber: lineNumber+1,
