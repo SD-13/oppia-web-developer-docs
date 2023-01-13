@@ -12,7 +12,8 @@ jobs:
     - name: Install Docker
       run: |
         sudo apt-get update
-        sudo apt-get -y install docker
+        sudo apt-get -y install curl
+        curl -sSL https://get.docker.com/ | sudo sh
     - name: Lint Markdown files
       run: |
         docker run --rm \
