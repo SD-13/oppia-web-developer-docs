@@ -9,16 +9,9 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-    - name: Install Docker
-      run: |
-        sudo apt-get update
-        sudo apt-get -y install curl
-        curl -sSL https://get.docker.com/ | sudo sh
-    - name: Lint Markdown files
-      run: |
-        docker run --rm \
-          -v "$(pwd)/Angular-Migration.md:/Angular-Migration:ro" \
-          avtodev/markdown-lint:v1 \
-          --rules /linter/rules.js \
-          --config /linter/config.yml \
-          /Angular-Migration.md
+    - name: Lint markdown files
+      uses: avto-dev/markdown-lint@v1
+      with:
+        rules: 'linter/rules.js'
+        config: 'linter/config.yml'
+        args: 'Angular-Migration.md'
