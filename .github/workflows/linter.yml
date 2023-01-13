@@ -9,12 +9,17 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
+    - name: find_all_md_files
+      run: |
+        find . -name "*.md" -type f -exec echo {} \; > markdown_files.txt
 
     - name: Check Note Notation
-      uses: docker://avtodev/markdown-lint:v1 # fastest way
+      uses: docker://avtodev/markdown-lint:v1
       with:
         rules: '/.github/linter/rules.js'
         config: '/.github/linter/config.yml'
+      env:
+        files: ${{ steps.find_all_md_files.outputs.files }}
 
     #     args: './CHANGELOG.md'
     #     ignore: './one_file.md ./another_file.md' # multiple files must be separated with single space
