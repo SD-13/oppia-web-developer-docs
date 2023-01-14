@@ -26,4 +26,4 @@ jobs:
       with:
         rules: 'linter/rules.js'
         config: 'linter/config.yml'
-        args: "$(files)"
+        args: "$(echo $files)"
