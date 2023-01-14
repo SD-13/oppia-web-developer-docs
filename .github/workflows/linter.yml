@@ -14,8 +14,8 @@ jobs:
         files=$(find . -name "*.md" -printf '%p ')
     - name: Lint markdown files
       run: |
-        cat $(pwd)
-        cat $(ls)
+        pwd
+        ls
         docker run --rm -v "$(pwd):/app" avtodev/markdown-lint:v1 --rules linter/rules.js --config linter/config.yml $files
 # name: Lint Check
 
