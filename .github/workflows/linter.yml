@@ -9,11 +9,11 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-    - name: Find all .md files
-      run: |
-        # cat $(find . -name '*.md' -printf '%p ')
-        files=$(find . -name "*.md" -exec sh -c 'echo "${1#./}"' _ {} \;)
-        echo $files
+    # - name: Find all .md files
+    #   run: |
+    #     # cat $(find . -name '*.md' -printf '%p ')
+    #     files=$(find . -name "*.md" -exec sh -c 'echo "${1#./}"' _ {} \;)
+    #     echo $files
     # - name: formating filenames
     #   run: |
     #     # files_args=$(echo $files | tr '\n' ' ')
@@ -26,4 +26,4 @@ jobs:
       with:
         rules: 'linter/rules.js'
         config: 'linter/config.yml'
-        args: "$(echo $files)"
+        args: $(cat linter/markdown_files.txt)
