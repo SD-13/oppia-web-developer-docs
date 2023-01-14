@@ -21,3 +21,4 @@ jobs:
               rules: 'linter/rules.js'
               config: 'linter/config.yml'
               args: '$file'
+        done
