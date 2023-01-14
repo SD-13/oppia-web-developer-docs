@@ -16,7 +16,7 @@ jobs:
       run: |
         pwd
         ls
-        docker run --rm -v "$(pwd):/app" avtodev/markdown-lint:v1 --rules linter/rules.js --config linter/config.yml $files
+        docker run --rm -v "$(pwd):/app" avtodev/markdown-lint:v1 --rules /home/runner/work/oppia-web-developer-docs/oppia-web-developer-docs/linter/rules.js --config linter/config.yml $files
 # name: Lint Check
 
 # on: push
