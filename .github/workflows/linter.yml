@@ -4,30 +4,47 @@ on: push
 
 jobs:
   lint:
-    name: Lint markdown file
+    name: Lint markdown files
     runs-on: ubuntu-latest
     steps:
     - name: Check out code
       uses: actions/checkout@v2
     - name: Find all .md files
       run: |
-        files=$(find . -name "*.md" -exec sh -c 'echo "${1#./}"' _ {} \;)
-        echo $files
-    #     # cat $(find . -name '*.md' -printf '%p ')
-    #     files=$(find . -name "*.md" -exec sh -c 'echo "${1#./}"' _ {} \;)
-    #     echo $files
-    # - name: formating filenames
-    #   run: |
-    #     # files_args=$(echo $files | tr '\n' ' ')
-    #     # echo $files_args
-    #   run: |
-    #     find . -name "*.md" -type f -exec sh -c 'echo "${1#./}"' _ {} \; > markdown_files.txt
-    #     cat markdown_files.txt
+        files=$(find . -name "*.md" -printf '%p ')
     - name: Lint markdown files
       run: |
-        docker run --rm avtodev/markdown-lint:v1 --rules linter/rules.js --config linter/config.yml $files
-      # uses: docker://avtodev/markdown-lint:v1
-      # with:
-      #   rules: 'linter/rules.js'
-      #   config: 'linter/config.yml'
-      #   args: $(cat linter/markdown_files.txt)
+        docker run --rm -v "$(pwd):/app" avtodev/markdown-lint:v1 --rules linter/rules.js --config linter/config.yml $files
+# name: Lint Check
+
+# on: push
+
+# jobs:
+#   lint:
+#     name: Lint markdown file
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Check out code
+#       uses: actions/checkout@v2
+#     - name: Find all .md files
+#       run: |
+#         files=$(find . -name "*.md" -exec sh -c 'echo "${1#./}"' _ {} \;)
+#         echo $files
+#     #     # cat $(find . -name '*.md' -printf '%p ')
+#     #     files=$(find . -name "*.md" -exec sh -c 'echo "${1#./}"' _ {} \;)
+#     #     echo $files
+#     # - name: formating filenames
+#     #   run: |
+#     #     # files_args=$(echo $files | tr '\n' ' ')
+#     #     # echo $files_args
+#     #   run: |
+#     #     find . -name "*.md" -type f -exec sh -c 'echo "${1#./}"' _ {} \; > markdown_files.txt
+#     #     cat markdown_files.txt
+#     - name: Lint markdown files
+#       run: |
+#         docker run --rm avtodev/markdown-lint:v1 --rules linter/rules.js --config linter/config.yml $files
+#       # uses: docker://avtodev/markdown-lint:v1
+#       # with:
+#       #   rules: 'linter/rules.js'
+#       #   config: 'linter/config.yml'
+#       #   args: $(cat linter/markdown_files.txt)
