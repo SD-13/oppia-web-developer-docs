@@ -12,7 +12,7 @@ jobs:
     - name: Find all .md files
       run: |
         # cat $(find . -name '*.md' -printf '%p ')
-        files=$(find . -name "*.md")
+        files=$(find . -name "*.md" -exec sh -c 'echo "${1#./}"' _ {} \;)
         echo $files
     - name: formating filenames
       run: |
