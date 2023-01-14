@@ -1,138 +1,138 @@
 default: false # includes/excludes all rules by default
 
-# Heading levels should only increment by one level at a time <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md001>
-MD001: false
+# # Heading levels should only increment by one level at a time <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md001>
+# MD001: false
 
-# Heading style <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md003>
-MD003: false
+# # Heading style <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md003>
+# MD003: false
 
-# Unordered list style <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md004>
-MD004: false
+# # Unordered list style <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md004>
+# MD004: false
 
-# Inconsistent indentation for list items at the same level <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md005>
-MD005: false
+# # Inconsistent indentation for list items at the same level <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md005>
+# MD005: false
 
-# Consider starting bulleted lists at the beginning of the line <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md006>
-MD006: false
+# # Consider starting bulleted lists at the beginning of the line <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md006>
+# MD006: false
 
-# Unordered list indentation <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md007>
-MD007: false
+# # Unordered list indentation <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md007>
+# MD007: false
 
-# Trailing spaces <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md009>
-MD009: false
+# # Trailing spaces <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md009>
+# MD009: false
 
-# Hard tabs <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md010>
-MD010: false
+# # Hard tabs <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md010>
+# MD010: false
 
-# Reversed link syntax <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md011>
-MD011: false
+# # Reversed link syntax <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md011>
+# MD011: false
 
-# Multiple consecutive blank lines <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md012>
-MD012: false
+# # Multiple consecutive blank lines <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md012>
+# MD012: false
 
-# Line length <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md013>
-MD013: false
+# # Line length <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md013>
+# MD013: false
 
-# Dollar signs used before commands without showing output <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md014>
-MD014: false
+# # Dollar signs used before commands without showing output <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md014>
+# MD014: false
 
-# No space after hash on atx style heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md018>
-MD018: false
+# # No space after hash on atx style heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md018>
+# MD018: false
 
-# Multiple spaces after hash on atx style heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md019>
-MD019: false
+# # Multiple spaces after hash on atx style heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md019>
+# MD019: false
 
-# No space inside hashes on closed atx style heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md020>
-MD020: false
+# # No space inside hashes on closed atx style heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md020>
+# MD020: false
 
-# Multiple spaces inside hashes on closed atx style heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md021>
-MD021: false
+# # Multiple spaces inside hashes on closed atx style heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md021>
+# MD021: false
 
-# Headings should be surrounded by blank lines <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md022>
-MD022: false
+# # Headings should be surrounded by blank lines <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md022>
+# MD022: false
 
-# Headings must start at the beginning of the line <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md023>
-MD023: false
+# # Headings must start at the beginning of the line <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md023>
+# MD023: false
 
-# Multiple headings with the same content <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md024>
-MD024: false
-  # allow_different_nesting: false
+# # Multiple headings with the same content <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md024>
+# MD024: false
+#   # allow_different_nesting: false
 
-# Multiple top level headings in the same document <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md025>
-MD025: false
+# # Multiple top level headings in the same document <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md025>
+# MD025: false
 
-# Trailing punctuation in heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md026>
-MD026: false
+# # Trailing punctuation in heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md026>
+# MD026: false
 
-# Multiple spaces after blockquote symbol <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md027>
-MD027: false
+# # Multiple spaces after blockquote symbol <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md027>
+# MD027: false
 
-# Blank line inside blockquote <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md028>
-MD028: false
+# # Blank line inside blockquote <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md028>
+# MD028: false
 
-# Ordered list item prefix <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md029>
-MD029: false
-  # style: 'one'
+# # Ordered list item prefix <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md029>
+# MD029: false
+#   # style: 'one'
 
-# Spaces after list markers <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md030>
-MD030: false
+# # Spaces after list markers <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md030>
+# MD030: false
 
-# Fenced code blocks should be surrounded by blank lines <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md031>
-MD031: false
+# # Fenced code blocks should be surrounded by blank lines <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md031>
+# MD031: false
 
-# Lists should be surrounded by blank lines <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md032>
-MD032: false
+# # Lists should be surrounded by blank lines <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md032>
+# MD032: false
 
-# Inline HTML <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md033>
-MD033: false
+# # Inline HTML <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md033>
+# MD033: false
 
-# Bare URL used <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md034>
-MD034: false
+# # Bare URL used <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md034>
+# MD034: false
 
-# Horizontal rule style <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md035>
-MD035: false
-  # style: '---'
+# # Horizontal rule style <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md035>
+# MD035: false
+#   # style: '---'
 
-# Emphasis used instead of a heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md036>
-MD036: false
+# # Emphasis used instead of a heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md036>
+# MD036: false
 
-# Spaces inside emphasis markers <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md037>
-MD037: false
+# # Spaces inside emphasis markers <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md037>
+# MD037: false
 
-# Spaces inside code span elements <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md038>
-MD038: false
+# # Spaces inside code span elements <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md038>
+# MD038: false
 
-# Spaces inside link text <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md039>
-MD039: false
+# # Spaces inside link text <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md039>
+# MD039: false
 
-# Fenced code blocks should have a language specified <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md040>
-MD040: false
+# # Fenced code blocks should have a language specified <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md040>
+# MD040: false
 
-# First line in file should be a top level heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md041>
-MD041: false
+# # First line in file should be a top level heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md041>
+# MD041: false
 
-# No empty links <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md042>
-MD042: false
+# # No empty links <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md042>
+# MD042: false
 
-# Required heading structure <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md043>
-MD043: false
+# # Required heading structure <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md043>
+# MD043: false
 
-# Proper names should have the correct capitalization <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md044>
-MD044: false
+# # Proper names should have the correct capitalization <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md044>
+# MD044: false
 
-# Images should have alternate text (alt text) <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md045>
-MD045: false
+# # Images should have alternate text (alt text) <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md045>
+# MD045: false
 
-# Code block style <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md046>
-MD046: false
-  # style: 'fenced'
+# # Code block style <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md046>
+# MD046: false
+#   # style: 'fenced'
 
-# Files should end with a single newline character <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md047>
-MD047: false
+# # Files should end with a single newline character <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md047>
+# MD047: false
 
-# Code fence style <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md048>
-MD048: false
-  # style: 'backtick'
+# # Code fence style <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md048>
+# MD048: false
+#   # style: 'backtick'
 
 # Custom rules:
 # CHANGELOG-RULE-001: false
