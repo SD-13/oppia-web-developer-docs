@@ -9,8 +9,10 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-    # - name: Find all .md files
-    #   run: |
+    - name: Find all .md files
+      run: |
+        files=$(find . -name "*.md" -exec sh -c 'echo "${1#./}"' _ {} \;)
+        echo $files
     #     # cat $(find . -name '*.md' -printf '%p ')
     #     files=$(find . -name "*.md" -exec sh -c 'echo "${1#./}"' _ {} \;)
     #     echo $files
@@ -22,8 +24,10 @@ jobs:
     #     find . -name "*.md" -type f -exec sh -c 'echo "${1#./}"' _ {} \; > markdown_files.txt
     #     cat markdown_files.txt
     - name: Lint markdown files
-      uses: docker://avtodev/markdown-lint:v1
-      with:
-        rules: 'linter/rules.js'
-        config: 'linter/config.yml'
-        args: $(cat linter/markdown_files.txt)
+      run: |
+        docker run --rm avtodev/markdown-lint:v1 --rules linter/rules.js --config linter/config.yml $files
+      # uses: docker://avtodev/markdown-lint:v1
+      # with:
+      #   rules: 'linter/rules.js'
+      #   config: 'linter/config.yml'
+      #   args: $(cat linter/markdown_files.txt)
