@@ -20,4 +20,4 @@ jobs:
             with:
               rules: 'linter/rules.js'
               config: 'linter/config.yml'
-              args: $file
+              args: '$file'
