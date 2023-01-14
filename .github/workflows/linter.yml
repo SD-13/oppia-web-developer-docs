@@ -9,16 +9,13 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-    - name: Find all .md files
-      run: |
-        find . -name "*.md" -type f -exec sh -c 'echo "${1#./}"' _ {} \; > markdown_files.txt
-        for file in $(cat markdown_files.txt); do
-          echo "Found file: $file"
-        
-          - name: Lint markdown files
-            uses: docker://avtodev/markdown-lint:v1
-            with:
-              rules: 'linter/rules.js'
-              config: 'linter/config.yml'
-              args: '$file'
-        done
+    # - name: Find all .md files
+    #   run: |
+    #     find . -name "*.md" -type f -exec sh -c 'echo "${1#./}"' _ {} \; > markdown_files.txt
+    #     cat markdown_files.txt
+    - name: Lint markdown files
+      uses: docker://avtodev/markdown-lint:v1
+      with:
+        rules: 'linter/rules.js'
+        config: 'linter/config.yml'
+        args: '$(find . -name "*.md")'
