@@ -16,11 +16,11 @@ jobs:
       with:
         node-version: 14
 
-    - name: Install markdownlint
-      run: npm install -g markdownlint
+    - name: Install markdownlint-cli
+      run: npm install -g markdownlint-cli
 
     - name: Lint Markdown files
-      run: npx markdownlint . --config .markdownlint.json --rules linter/rules.js
+      run: npx markdownlint-cli . --config .markdownlint.json --rules linter/rules.js
     
     - name: Lint Markdown files_2.0
-      run: markdownlint . --config .markdownlint.json --rules linter/rules.js
+      run: markdownlint-cli . --config .markdownlint.json --rules linter/rules.js
