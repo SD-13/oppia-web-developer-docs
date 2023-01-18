@@ -16,6 +16,11 @@ for filename in ${filenames}; do
         printf "$matches"
         printf "\n"
     fi
+done
+if [ "$exit_code" == 1 ]; then
+    echo "Lint Check Failed!"
+    exit 1
+fi
     # if ${matches} == *$'0-9'; then
     #     printf "empty line for not matching"
     # else
@@ -26,12 +31,6 @@ for filename in ${filenames}; do
     # echo "${matches}"
     # printf "$filename"
     # printf "\n"
-done
-if [ "$exit_code" == 1 ]; then
-    echo "Lint Check Failed!"
-    exit 1
-fi
-
 # if grep --color=always -E 'foo' /home/user/myrepo/*.txt &> /dev/null; then
 #   echo "Pattern 'foo' found"
 # else

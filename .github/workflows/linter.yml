@@ -7,12 +7,13 @@ jobs:
     name: Lint markdown file
     runs-on: ubuntu-latest
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
-    - name: Lint markdown files
-      run: |
-        chmod +x linter.sh
-        bash linter.sh
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - name: Lint markdown files
+        run: |
+          python linter.py
+          # chmod +x linter.sh
+          # bash linter.sh
       # uses: docker://avtodev/markdown-lint:v1
       # with:
       #   rules: 'linter/rules.js'
