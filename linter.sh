@@ -3,6 +3,7 @@ filenames=$(find . -name "*.md" -exec sh -c 'echo "${1#./}"' _ {} \;)
 # echo $filenames
 pwd=$(pwd)
 pattern='^> \*\*Note\*\*'
+exit_code=0
 
 # Iterating over the markdown files
 for filename in ${filenames}; do
@@ -10,6 +11,7 @@ for filename in ${filenames}; do
     # Checking for a the regex pattern in each file
     matches=$(grep -n -H -E "$pattern" $filename)
     if [ "$matches" != "" ]; then
+        exit_code=1
         # printf "found a match:   "
         printf "$matches"
         printf "\n"
@@ -25,6 +27,10 @@ for filename in ${filenames}; do
     # printf "$filename"
     # printf "\n"
 done
+if [ "$exit_code" == 1 ]; then
+    echo "Lint Check Failed!"
+    exit 1
+fi
 
 # if grep --color=always -E 'foo' /home/user/myrepo/*.txt &> /dev/null; then
 #   echo "Pattern 'foo' found"
