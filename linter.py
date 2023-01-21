@@ -3,8 +3,8 @@ import re
 from typing import Pattern, List
 
 search_note_pattern: Pattern = re.compile(r'^\*\*Note\*\*')
-search_warning_pattern: Pattern = re.compile(r'^> \*\*Warning\*\*')
-correct_note_pattern: Pattern = re.compile(r'^\*\*Note\*\*')
+search_warning_pattern: Pattern = re.compile(r'^\*\*Warning\*\*')
+correct_note_pattern: Pattern = re.compile(r'^> \*\*Note\*\*')
 correct_warning_pattern: Pattern = re.compile(r'^> \*\*Warning\*\*')
 
 def find_regex_in_file_content(
@@ -20,7 +20,7 @@ def find_regex_in_file_content(
             lines = file.readlines()
         for i, line in enumerate(lines):
             if search_pattern.search(line):
-                print(f'{filename}:{i+1}: error: wrong notation "{line}"; expected "{correct_pattern.pattern}"')
+                print(f'{filename}:{i+1}: error: wrong notation "{search_pattern.pattern}"; expected "{correct_pattern.pattern}"')
                 exit_code = 1
     return True if exit_code == 1 else False
 
@@ -34,6 +34,6 @@ found_warning_pattern: bool = find_regex_in_file_content(
     search_warning_pattern, correct_warning_pattern, all_markdown_filenames
 )
 
-if found_note_pattern and found_warning_pattern:
+if found_note_pattern or found_warning_pattern:
     print("Lint Check Failed!!")
     exit(1)
