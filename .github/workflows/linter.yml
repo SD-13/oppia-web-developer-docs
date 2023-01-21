@@ -1,0 +1,14 @@
+name: Lint Check
+
+on: push
+
+jobs:
+  lint:
+    name: Lint markdown file
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - name: Lint markdown files
+        run: |
+          python linter.py
