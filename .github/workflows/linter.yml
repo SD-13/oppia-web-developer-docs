@@ -11,4 +11,4 @@ jobs:
       - uses: actions/setup-python@v3
       - name: Lint markdown files
         run: |
-          python linter.py
+          python scripts/linter.py
