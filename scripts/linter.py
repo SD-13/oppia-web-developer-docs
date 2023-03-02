@@ -41,7 +41,7 @@ def main() -> None:
 
     if found_note_pattern or found_warning_pattern:
         print("Lint Check Failed!")
-        sys.exit(1)
+        exit(1)
 
 
 if __name__ == '__main__':
