@@ -98,7 +98,10 @@ For systems with 8GB RAM:
 - Allocate around 75% of the CPUs and swap memory available on your system specifications from the same settings panel.
 
 
-2. **Build Oppia for the First Time**: Run the following command to build Oppia for the first time. This step downloads all the necessary third-party libraries, python dependencies, and the other services required for the Oppia development server, which may take approximately 15-20 minutes (varies according to the network connection speed).
+### Build Oppia for the First Time
+1. **Launch the Docker Desktop app from your Applications menu**: This will start the Docker Engine, which is required to run any dockerized application or the Docker commands.
+
+2. Run the following command to build Oppia for the first time. This step downloads all the necessary third-party libraries, python dependencies, and the other services required for the Oppia development server, which may take approximately 15-20 minutes (varies according to the network connection speed).
 
    ```
    make build
@@ -107,11 +110,21 @@ For systems with 8GB RAM:
 
    > NOTE: This build is not related to production build in any way. This command runs `docker compose build` under the hood, which is used to build the images for services defined in the `docker-compose.yml` file. For more information, refer to the [official documentation](https://docs.docker.com/compose/reference/build/).
 
+**Known issues and solutions**
+
+1. `[webpack-compiler 8/8] RUN yarn install --pure-lockfile` step fails for network connection timeout.
+
+   Sample log:
+   ```
+   => ERROR [webpack-compiler 8/8] RUN yarn install --pure-lockfile 420.3s 
+   ...
+   info There appears to be trouble with your network connection. Retrying... ------ failed to solve: process "/bin/sh -c yarn install --pure-lockfile" did not complete successfully: exit code: 1 make: *** [Makefile:47: build] 
+   ```
+
+   **Solution** - Re-run `make build` few times.
 ### Launching the development server
 
-1. **Launch the Docker Desktop app from your Applications menu**: This will start the Docker Engine, which is required to run any dockerized application or the Docker commands.
-
-2. **Start the local development server**: To start the local development server, execute the following command:
+1. **Start the local development server**: To start the local development server, execute the following command:
 
    ```
    make run-devserver
@@ -122,7 +135,7 @@ For systems with 8GB RAM:
    > [!TIP]  
    > If you run into errors while installing Oppia, please try running `make clean` and running `make run-devserver` again. If the issue persists, please refer to the [[Troubleshooting page|Troubleshooting]].
 
-3. **Access oppia development server**: Open your browser and navigate to `http://localhost:8181/`. You should see the Oppia development server running.
+2. **Access oppia development server**: Open your browser and navigate to `http://localhost:8181/`. You should see the Oppia development server running.
 
    ![Oppia home Page](images/install/homePage.png)
 
@@ -146,7 +159,7 @@ For systems with 8GB RAM:
    This command launches the Oppia development server in offline mode, and you can continue to perform your tasks as usual.
    > NOTE: Ensure that you have already built and run the Oppia development server for the first time before running this command. If not, run `make build` and then `make run-devserver` first (with internet connection), which downloads all the necessary third-party libraries, python dependencies, and the other services required for the Oppia development server.
 
-3. **Stop the Local Development Server**: To stop the local development server, execute the following command:
+4. **Stop the Local Development Server** To stop the local development server, execute the following command:
 
    ```
    make stop
